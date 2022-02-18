@@ -52,14 +52,14 @@ const Footer = () => {
               <img
                 style={{ width: "200px", height: "auto" }}
                 className="po-logo"
-                src="/assets/img/footer-logo/PO.png"
+                src="/img/footer-logo/PO.png"
                 alt="pacificone-logo.png"
               />
             </a>
             <a target="_blank" href="https://pacificxraycoring.ca/">
               <img
                 style={{ width: "230px", height: "auto" }}
-                src="/assets/img/footer-logo/PXC.png"
+                src="/img/footer-logo/PXC.png"
                 alt="pacificone-logo.png"
               />
             </a>

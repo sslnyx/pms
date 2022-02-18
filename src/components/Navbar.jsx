@@ -1,5 +1,5 @@
 // import React from "react";
-import siteLogo from "/assets/img/logos/PMS_logo.svg";
+import siteLogo from "/img/logos/PMS_logo.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ edges }) => {

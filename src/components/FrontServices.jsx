@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import bgMap from "/assets/img/services/02_service_mapbg.svg";
-import bgCircleIn from "/assets/img/services/circle_in.svg";
-import bgCircleOut from "/assets/img/services/circle_out.svg";
+import bgMap from "/img/services/02_service_mapbg.svg";
+import bgCircleIn from "/img/services/circle_in.svg";
+import bgCircleOut from "/img/services/circle_out.svg";
 import { services } from "../../lib/staticData";
 
 const FrontServices = () => {
@@ -52,7 +52,7 @@ const FrontServices = () => {
               <div className="round-container pe-none"></div>
               <img
                 className="serv-icon pe-none"
-                src={`/assets/img/services/icon0${img}.svg`}
+                src={`/img/services/icon0${img}.svg`}
                 style={{
                   transform: `rotate(-${i * (360 / services.length)}deg)`,
                 }}

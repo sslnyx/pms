@@ -15,7 +15,7 @@
     }
     &::before {
       content: "";
-      background: url("/assets/img/logos/04_quote_open.svg");
+      background: url("/img/logos/04_quote_open.svg");
       display: block;
       width: 50px;
       height: 50px;
@@ -26,7 +26,7 @@
     &::after {
       position: absolute;
       content: "";
-      background: url("/assets/img/logos/04_quote_close.svg");
+      background: url("/img/logos/04_quote_close.svg");
       display: block;
       width: 50px;
       height: 50px;
