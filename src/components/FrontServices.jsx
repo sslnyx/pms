@@ -21,7 +21,10 @@ const FrontServices = () => {
           Take a look at our full range of services below:
         </p>
       </div>
-      <div className="serv-graph"></div>
+
+      <div className="serv-graph">
+          serv
+      </div>
     </section>
   );
 };
