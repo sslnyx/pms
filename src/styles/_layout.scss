@@ -16,6 +16,10 @@ body {
   }
 }
 
+#root {
+  overflow: hidden;
+}
+
 .viewport {
   overflow: hidden;
   position: relative;

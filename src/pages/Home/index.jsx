@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import FrontPageHeroSlides from "../../components/FrontPageHeroSlides";
 import { useLocation } from "react-router-dom";
 import FrontServices from "../../components/FrontServices";
+import FrontAbout from "../../components/FrontAbout";
 
 const Home = ({ edges }) => {
   const { pathname } = useLocation();
@@ -19,6 +20,7 @@ const Home = ({ edges }) => {
         <>
           <FrontPageHeroSlides {...pageData} />
           <FrontServices />
+          <FrontAbout />
         </>
       ) : (
         ""

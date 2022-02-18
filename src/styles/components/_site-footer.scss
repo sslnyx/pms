@@ -1,7 +1,34 @@
 .site-footer {
   background: $lightgrey;
+  font-size: 12px;
+
   padding: 3rem 0;
+
+  .po-logo {
+    margin-bottom: 50px;
+  }
   a {
     font-weight: 600;
+  }
+}
+
+.site-footer strong {
+  font-size: 14.4px;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    font-size: 1rem;
+    .text-block {
+      text-align: right;
+    }
+    .po-logo {
+      margin-bottom: 0px;
+      margin-right: 50px;
+    }
+  }
+
+  .site-footer strong {
+    font-size: 1rem;
   }
 }

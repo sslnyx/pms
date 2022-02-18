@@ -7,7 +7,7 @@ const FrontPageHeroSlides = ({
     homeHeroSlider: { homeHeroSlider },
   },
 }) => {
-  console.log(homeHeroSlider);
+//   console.log(homeHeroSlider);
   return (
     <section id="banner" className="banner">
       <div className="swiper-container">
@@ -15,8 +15,8 @@ const FrontPageHeroSlides = ({
           <Swiper
             //   spaceBetween={50}
             //   slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => console.log(swiper)}
           >
             {homeHeroSlider.map(({ slideTitle, slideImage }, i) => (
               <SwiperSlide key={i}>

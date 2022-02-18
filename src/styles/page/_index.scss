@@ -146,13 +146,18 @@
       filter: inherit;
     }
   }
+
   .serv-icon {
     pointer-events: none;
     max-width: 50px;
-    filter: invert(43%) sepia(6%) saturate(9%) hue-rotate(359deg)
-      brightness(90%) contrast(91%);
+    filter: invert(43%) sepia(6%) saturate(9%) hue-rotate(359deg) brightness(90%) contrast(91%);
   }
   .serv-content {
+    h2 {
+      color: $blue;
+    }
+    opacity: 0;
+    transition: opacity 0.5s ease;
     position: absolute;
     top: 50%;
     right: 50%;
@@ -167,6 +172,9 @@
       color: $blue;
       line-height: 1.5rem;
       text-decoration: underline;
+    }
+    &.active {
+      opacity: 1;
     }
   }
 }
@@ -256,7 +264,6 @@
     background: #333;
   }
 }
-
 
 @media (min-width: 768px) {
   .serv-graph {

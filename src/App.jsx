@@ -3,6 +3,7 @@ import { getAllPagesWithSlug } from "../lib/api";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 // Import Swiper styles
@@ -33,6 +34,7 @@ function App() {
               <Route index element={<Home {...pagesData} />} />
             </Routes>
           </main>
+          <Footer />
         </BrowserRouter>
       ) : (
         ""
