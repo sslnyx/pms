@@ -1,0 +1,313 @@
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $blue $lightgrey;
+  // font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #6e6e6e;
+  // background: red;
+  // background: #cdc7c2;
+  scroll-behavior: smooth;
+}
+
+.viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// main {
+//   flex: 1;
+// }
+
+.scroll-container {
+  position: relative;
+  // overflow: hidden;
+  // z-index: 10;
+  // backface-visibility: hidden;
+  // transform-style: preserve-3d;
+  // width: 100%;
+}
+
+.fixed-menu {
+  overflow: hidden;
+  position: relative;
+}
+
+.my-element {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+a {
+  color: #000006;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+button:focus {
+  outline: 0;
+}
+
+// [class*="col"] {
+//   margin: 0;
+// }
+
+.btn {
+  border-radius: 0;
+  padding: 10px 20px 8px;
+  &:not(:disabled):not(.disabled):active:focus,
+  &:active:focus,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-blue {
+  background: $blue;
+  color: #fff;
+  &:hover {
+    background: $grey;
+    color: #fff;
+  }
+}
+
+.page-wrapper {
+  overflow: hidden;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+.btn-learnmore {
+  font-weight: 700;
+  color: $blue;
+  display: inline-block;
+  border-bottom: 1px solid $blue;
+  padding-bottom: 0.8rem;
+  transition: all 0.5s ease;
+  &:hover {
+    color: $blue;
+    // border-bottom: 1px solid darken($blue, $amount: 10%);
+    opacity: 0.8;
+  }
+  &-white {
+    display: inline-block;
+    transition: all 0.5s ease;
+    color: #fff;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #fff;
+    &:hover {
+      color: #fff;
+      opacity: 0.5;
+    }
+  }
+}
+
+p:last-child {
+  margin: 0;
+}
+
+.text-content {
+  padding: 1rem;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.bg-blue {
+  background-color: $blue;
+  h2 {
+    color: #fff;
+  }
+  color: #fff;
+}
+
+.blue-block {
+  color: #fff;
+  h2 {
+    color: #fff;
+    font-weight: 600;
+  }
+  background: $blue;
+}
+
+.text-black {
+  color: black;
+}
+
+.collapse-button {
+  position: relative;
+  width: 18px;
+  height: 18px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: $blue;
+    transition: transform 0.25s ease-out;
+  }
+
+  /* Vertical line */
+  &:before {
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    margin-left: -1.5px;
+    transform: rotate(90deg);
+  }
+
+  /* horizontal line */
+  &:after {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -1.5px;
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    // &:before{ transform: rotate(90deg); }
+    // &:after{ transform: rotate(180deg); }
+  }
+}
+
+.collapsed {
+  .collapse-button {
+    &:before {
+      transform: rotate(0deg);
+    }
+    &:after {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  height: 50vh;
+  @include center;
+  margin-bottom: 0;
+  background: $lightgrey;
+
+  img {
+    // width: 100%;
+    height: 120%;
+    max-width: none;
+    min-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+  }
+  .title-container {
+    position: absolute;
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $blue;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $blue;
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-bottom: 150px;
+  }
+}

@@ -1,0 +1,43 @@
+.contact-us {
+  .hero {
+    h1 {
+      color: #fff;
+    }
+  }
+
+  .address {
+    margin: 100px 0;
+    @include center;
+    font-weight: bold;
+    h2 {
+      font-size: 1rem;
+    }
+    p {
+      span {
+        min-width: 100px;
+        display: inline-block;
+      }
+    }
+    a {
+      color: $grey;
+    }
+  }
+
+  .join {
+    padding: 200px 1rem;
+    color: #fff;
+    h2 {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-us {
+    .address {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

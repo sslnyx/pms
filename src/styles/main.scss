@@ -1,0 +1,27 @@
+// @import "~normalize.css";
+// @import "~include-media/dist/include-media";
+// @import url('https://fonts.googleapis.com/css?family=Tenor+Sans&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Tenor+Sans&display=swap');
+// @import "~bootstrap";
+// @import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap-vue/src/index.scss';
+@import "./variables";
+@import "./typography";
+@import "./mixin";
+@import "./layout";
+
+@import "./components/site-header";
+@import "./components/site-content";
+@import "./components/site-footer";
+
+@import "./components/progress-bar";
+
+@import "./page/index";
+@import "./page/single-work";
+@import "./page/work";
+@import "./page/about-us";
+@import "./page/services";
+@import "./page/portfolio";
+@import "./page/contact";
+@import "./page/programs";
+@import "./page/get-a-quote";

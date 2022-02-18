@@ -1,0 +1,121 @@
+.services {
+  .hero {
+    h1 {
+      color: #fff;
+    }
+  }
+
+  .intro {
+    h2 {
+      margin-bottom: 2rem;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+[data-columns]::before {
+  content: "1 .column.size-1of1";
+}
+
+[data-columns] {
+  // min-height: 600px;
+  display: flex;
+  /* These are the classes that are going to be applied: */
+  .column {
+    &:nth-child(1) {
+      // order: 2;
+      padding-left: none;
+    }
+    &:nth-child(2) {
+      // order: 1;
+      padding-left: none;
+    }
+  }
+  .size-1of1 {
+    width: 100%;
+  }
+  .size-1of2 {
+    width: 50%;
+  }
+}
+
+.service-wrapper {
+  button {
+    width: 100%;
+    background: inherit;
+    align-items: center;
+    color: #000;
+    border: inherit;
+    padding: 2rem 0;
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:focus {
+      background: inherit !important;
+      color: #000 !important;
+      border: inherit;
+      box-shadow: inherit !important;
+    }
+    img {
+      width: 50px;
+      filter: invert(43%) sepia(6%) saturate(9%) hue-rotate(359deg)
+        brightness(90%) contrast(91%);
+      margin-right: 2rem;
+    }
+    span {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+}
+
+.center-ser-btn{
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.our-service{
+  .break1{
+    display: none;
+  }
+}
+
+@media (min-width: 525px) {
+  .our-service{
+    .break1{
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  [data-columns]::before {
+    content: "2 .column.size-1of2";
+  }
+  [data-columns] {
+    .column {
+      &:nth-child(2) {
+        padding-left: 2rem;
+      }
+      &:nth-child(1) {
+        padding-left: 8rem;
+      }
+    }
+  }
+
+  .service-wrapper {
+    button {
+      span {
+        font-size: 1.5rem;
+      }
+    }
+    .center-ser-btn{
+      width: auto;
+      margin: 0 auto;
+      margin-left: auto;
+    }
+  }
+
+}

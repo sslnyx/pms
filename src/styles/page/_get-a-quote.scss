@@ -1,0 +1,136 @@
+.get-a-quote {
+  .page-title {
+    margin-top: 50px;
+    padding: 1rem;
+    h1 {
+      font-size: 60px;
+      margin-bottom: 2rem;
+      line-height: 60px;
+    }
+    h2 {
+      margin-bottom: 2rem;
+    }
+    p {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    .btn {
+      margin-left: 1rem;
+    }
+    .btn-submit {
+      color: $blue;
+      background: none;
+      border: none;
+      border-bottom: 1px solid $blue;
+      padding: 1rem 0;
+      font-weight: 700;
+      &:not(:disabled):not(.disabled):active:focus,
+      &:active:focus,
+      &:focus {
+        color: $blue;
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  form.content {
+    max-width: 800px;
+  }
+  .form-group {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .message {
+    width: 100%;
+  }
+
+  .form-control {
+    border: none;
+    border-bottom: 1px solid $grey;
+    border-radius: 0;
+    padding-left: 0;
+    color: $grey;
+    &:focus {
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: $grey;
+    }
+  }
+  textarea.form-control {
+    border: 1px solid $grey;
+    padding: 1rem;
+    height: 100px;
+    width: 100%;
+  }
+
+  fieldset.Service,
+  fieldset.Property {
+    div[role="group"] {
+      position: relative;
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+
+        border-top: 8px solid $grey;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  select {
+    cursor: pointer;
+
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $grey;
+    padding: 1rem;
+    padding-left: 0;
+    color: $grey;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    &:focus {
+      outline: none;
+    }
+    option[disabled="disabled"] {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .get-a-quote {
+    .page-title {
+      h1 {
+        font-size: 80px;
+        line-height: 80px;
+        margin-bottom: 50px;
+      }
+    }
+
+    form{
+      .form-group {
+        width: 50%;
+        margin-bottom: 80px;
+      }
+    
+    }
+  }
+
+
+}

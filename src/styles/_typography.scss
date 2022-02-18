@@ -1,0 +1,53 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Overpass", sans-serif;
+}
+
+p {
+  // font-size: 16px;
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h1 {
+  color: $blue;
+}
+
+h2 {
+  letter-spacing: 1px;
+}
+
+h2,
+strong {
+  color: #000;
+  display: block;
+}
+
+h5 {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+// @font-face {
+//   font-family: "fa";
+//   src: url("webfonts/fa-regular-400.ttf") format("ttf");
+//   //  url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+// }

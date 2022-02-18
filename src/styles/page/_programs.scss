@@ -1,0 +1,45 @@
+.programs {
+  .hero {
+    h1 {
+      color: #fff;
+    }
+  }
+
+  .rebate {
+    margin: 100px 0;
+
+    .row {
+      &:nth-child(1) {
+        margin-bottom: 80px;
+      }
+      &:nth-child(2) {
+        h2 {
+          margin-bottom: 2rem;
+        }
+        .col-12:nth-child(2) {
+          p:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .programs {
+    .rebate {
+      margin: 100px 0;
+
+      .row {
+        &:nth-child(2) {
+          .col-12:nth-child(2) {
+            p:first-child {
+              margin-top: 108px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
