@@ -2,7 +2,7 @@
 import siteLogo from "/img/logos/PMS_logo.svg";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ edges }) => {
+const Navbar = ({ pages: { edges } }) => {
   // console.log(edges);
   return (
     <div className="site-header">

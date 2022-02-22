@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import FrontServices from "../../components/FrontServices";
 import FrontAbout from "../../components/FrontAbout";
 
-const Home = ({ edges }) => {
+const Home = ({ pages: { edges } }) => {
   const { pathname } = useLocation();
   const [pageData, setPageData] = useState();
 

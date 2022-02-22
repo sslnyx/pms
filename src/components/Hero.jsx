@@ -1,17 +1,16 @@
-import React from "react";
-import { withRouter } from "next/router";
-
-import { getPageData } from "../lib/api";
-
-const Hero = (props) => {
-  //   console.log(props);
+const Hero = ({ heroSection: { image, subTitle, title } }) => {
+  // console.log(props);
   return (
-    <section id="hero" class="hero text-center" style="overflow:hidden">
-      <div class="title-container p-3" style="z-index:100">
-        <h1></h1>
-        <p class="text-uppercase"></p>
+    <section
+      id="hero"
+      className="hero text-center"
+      style={{ overflow: "hidden" }}
+    >
+      <div className="title-container p-3" style={{ zIndex: 100 }}>
+        <h1>{title}</h1>
+        <p className="text-uppercase">{subTitle}</p>
       </div>
-      <img />
+      <img srcSet={image.srcSet} />
     </section>
   );
 };

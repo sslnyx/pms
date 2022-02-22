@@ -313,6 +313,29 @@ p:last-child {
   background: $blue;
 }
 
+.accordion-item,
+.accordion-item .accordion-button {
+  border: none;
+  background-color: transparent;
+  box-shadow: inherit;
+}
+
+.accordion-button {
+  &::after {
+    display: none;
+  }
+}
+
+.accordion-body {
+  padding: 0;
+}
+.service-wrapper button:hover,
+.service-wrapper button:active,
+.service-wrapper button:active:focus,
+.service-wrapper button:focus {
+  border: none;
+}
+
 @media (min-width: 768px) {
   section {
     margin-bottom: 150px;
