@@ -29,7 +29,7 @@ const Services = ({ pages: { edges } }) => {
   const slug = useLocation().pathname;
 
   useEffect(async () => {
-    const { node } = await findPage(edges, slug);
+    const { node } = await findPage(edges, slug.substring(1));
     setPageData(node);
   }, [pageData]);
 

@@ -20,10 +20,13 @@ const Navbar = ({ pages: { edges } }) => {
               <div className="bar3"></div>
             </div>
             <ul className="d-none d-lg-flex justify-content-between text-uppercase order-2">
+              <li>
+                <Link to={`/`}>HOME</Link>
+              </li>
               {edges?.map(({ node }) =>
-                node.slug !== "get-a-quote" ? (
+                node.slug !== "get-a-quote" && node.slug !== "front-page" ? (
                   <li key={node.slug}>
-                    <Link to={node.uri}>{node.title}</Link>
+                    <Link to={`/${node.slug}`}>{node.title}</Link>
                   </li>
                 ) : (
                   ""

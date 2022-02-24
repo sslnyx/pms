@@ -8,7 +8,7 @@ const Portfolio = ({ pages: { edges } }) => {
   const slug = useLocation().pathname;
 
   useEffect(async () => {
-    const { node } = findPage(edges, slug);
+    const { node } = findPage(edges, slug.substring(1));
     setPageData(node);
   }, []);
 
