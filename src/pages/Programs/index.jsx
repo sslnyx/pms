@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import { findPage } from "../../../lib/plugins";
 import Hero from "../../components/Hero";
+import Helmet from "react-helmet";
 
 const Programs = ({ node: { heroSection, slug } }) => {
   // const [pageData, setPageData] = useState();
@@ -15,6 +16,9 @@ const Programs = ({ node: { heroSection, slug } }) => {
 
   return (
     <div className={slug}>
+      <Helmet>
+        <title>Programs</title>
+      </Helmet>
       <Hero {...heroSection} />
 
       <section className="rebate">

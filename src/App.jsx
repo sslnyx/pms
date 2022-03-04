@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllPagesWithSlug } from "../lib/api";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
+import Helmet from "react-helmet";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -33,6 +34,10 @@ function App() {
 
   return (
     <ParallaxProvider>
+      <Helmet
+        defaultTitle={"Pacific Mechanical Systems LTD"}
+        titleTemplate="%s | Pacific Mechanical Systems LTD"
+      ></Helmet>
       {pagesData ? (
         <BrowserRouter>
           <Navbar {...pagesData} />

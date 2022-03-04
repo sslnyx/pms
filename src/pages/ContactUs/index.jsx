@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { findPage } from "../../../lib/plugins";
 import Hero from "../../components/Hero";
+import Helmet from "react-helmet";
 
 const ContactUs = ({ node: { heroSection, slug } }) => {
   return (
     <div className={slug}>
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <Hero {...heroSection} />
       <section id="address" className="address align-items-start">
         <a

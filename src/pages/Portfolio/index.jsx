@@ -5,6 +5,7 @@ import Hero from "../../components/Hero";
 import PortfolioClients from "../../components/PortfolioClients";
 import PortfolioProjects from "../../components/PortfolioProjects";
 import PortfolioTestimonial from "../../components/PortfolioTestimonial";
+import Helmet from "react-helmet";
 
 const Portfolio = ({
   node: { heroSection, portfolioClients, portfolioTestimonial },
@@ -12,6 +13,9 @@ const Portfolio = ({
 }) => {
   return (
     <div className={"portfolio"}>
+      <Helmet>
+        <title>Portfolio</title>
+      </Helmet>
       <Hero {...heroSection} />
       <PortfolioClients {...portfolioClients} />
       <PortfolioProjects projects={nodes} />

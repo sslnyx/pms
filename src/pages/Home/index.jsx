@@ -4,6 +4,7 @@ import FrontPageHeroSlides from "../../components/FrontPageHeroSlides";
 import { useLocation } from "react-router-dom";
 import FrontServices from "../../components/FrontServices";
 import FrontAbout from "../../components/FrontAbout";
+import Helmet from "react-helmet";
 
 const Home = ({ pageContent: { homeHeroSlider } }) => {
   // console.log(pageContent);

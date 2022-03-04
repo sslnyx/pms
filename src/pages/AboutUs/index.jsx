@@ -8,13 +8,16 @@ import AboutYT from "../../components/AboutYT";
 import AboutPhilosophy from "../../components/AboutPhilosophy";
 import AboutMembers from "../../components/AboutMembers";
 import AboutJoin from "../../components/AboutJoin";
+import Helmet from "react-helmet";
 
 import { findPage } from "../../../lib/plugins";
 
 const AboutUs = ({ pageContent: { heroSection, content, slug }, teams }) => {
-
   return (
     <div className={slug}>
+      <Helmet>
+        <title>About Us</title>
+      </Helmet>
       <Hero {...heroSection} />
 
       <AboutDes {...{ content }} />

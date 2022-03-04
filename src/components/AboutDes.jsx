@@ -12,7 +12,7 @@ const AboutDes = ({ content }) => {
         <Col cols="12" md="6" className="mb-5 mb-md-0">
           <img
             ref={parallax.ref}
-            className="about-bg d-none d-md-block w-100 h-100"
+            className="about-bg d-none d-md-block"
             src="/img/about/04_aboutus.jpg"
             alt="bg"
           />

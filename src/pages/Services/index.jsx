@@ -10,6 +10,7 @@ import {
 import { services } from "../../../lib/staticData";
 import { findPage } from "../../../lib/plugins";
 import Hero from "../../components/Hero";
+import Helmet from "react-helmet";
 
 const servInCol = paginate(services, services.length / 2);
 
@@ -25,6 +26,9 @@ function paginate(arr, size) {
 const Services = ({ node: { heroSection, slug, content } }) => {
   return (
     <div className={slug}>
+      <Helmet>
+        <title>Services</title>
+      </Helmet>
       <Hero {...heroSection} />
       <div
         className="intro content text-center mt-5 p-3 p-md-5"

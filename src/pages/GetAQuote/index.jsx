@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Row, Col, Spinner } from "react-bootstrap";
 import { formFields } from "../../../lib/staticData";
 import axios from "axios";
+import Helmet from "react-helmet";
 
 const GetAQuote = ({ pageContent: { content, title } }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -53,6 +54,9 @@ const GetAQuote = ({ pageContent: { content, title } }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Get A Quote</title>
+      </Helmet>
       {!submitSucess ? (
         <div className="form-container get-a-quote">
           <div className="page-title content text-center">
