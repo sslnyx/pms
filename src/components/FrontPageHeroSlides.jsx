@@ -1,24 +1,25 @@
 // import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const FrontPageHeroSlides = ({
-  node: {
-    homeHeroSlider: { homeHeroSlider },
-  },
-}) => {
-//   console.log(homeHeroSlider);
+const FrontPageHeroSlides = ({ homeHeroSlider }) => {
+  //   console.log(homeHeroSlider);
   return (
     <section id="banner" className="banner">
       <div className="swiper-container">
         {homeHeroSlider ? (
           <Swiper
+            modules={[Pagination, Autoplay]}
+            autoplay={{ disableOnInteraction: false }}
+            pagination={{ clickable: true }}
             //   spaceBetween={50}
             //   slidesPerView={3}
             // onSlideChange={() => console.log("slide change")}
             // onSwiper={(swiper) => console.log(swiper)}
           >
-            {homeHeroSlider.map(({ slideTitle, slideImage }, i) => (
+            {homeHeroSlider.map(({ slideTitle, slideImage, learnMore }, i) => (
               <SwiperSlide key={i}>
                 <Row>
                   <Col
@@ -28,6 +29,10 @@ const FrontPageHeroSlides = ({
                   >
                     <div className="text-content">
                       <h2 dangerouslySetInnerHTML={{ __html: slideTitle }}></h2>
+
+                      <Link className="btn-learnmore" to={learnMore.url}>
+                        {learnMore.title}
+                      </Link>
                     </div>
                   </Col>
                   <Col xs={12} lg={6} className="banner order-1 order-lg-2">

@@ -1,9 +1,19 @@
 // import React from "react";
+import { useEffect } from "react";
 import siteLogo from "/img/logos/PMS_logo.svg";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ pages: { edges } }) => {
-  // console.log(edges);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+
   return (
     <div className="site-header">
       <nav className="d-flex justify-content-between align-items-center align-items-md-end flex-wrap flex-md-nowrap">
@@ -33,6 +43,10 @@ const Navbar = ({ pages: { edges } }) => {
                 )
               )}
             </ul>
+
+            <Link className="btn btn-blue order-2 order-sm-2" to="/get-a-quote">
+              GET A QUOTE
+            </Link>
           </div>
         </div>
       </nav>

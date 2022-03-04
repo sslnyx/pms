@@ -153,6 +153,7 @@
     filter: invert(43%) sepia(6%) saturate(9%) hue-rotate(359deg) brightness(90%) contrast(91%);
   }
   .serv-content {
+    pointer-events: none;
     h2 {
       color: $blue;
     }
@@ -175,6 +176,7 @@
     }
     &.active {
       opacity: 1;
+      pointer-events: all;
     }
   }
 }
@@ -245,24 +247,27 @@
   overflow: inherit;
 }
 
+
+.swiper-pagination {
+  // bottom: 50vh;
+  // top: 50vh;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 8px !important;
+  border: 1px solid #333;
+  background: #fff;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}
+
 .swiper-container-horizontal {
-  .swiper-pagination {
-    // bottom: 50vh;
-    // top: 50vh;
-  }
 
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    margin: 0 8px !important;
-    border: 1px solid #333;
-    background: #fff;
-    opacity: 1;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #333;
-  }
 }
 
 @media (min-width: 768px) {

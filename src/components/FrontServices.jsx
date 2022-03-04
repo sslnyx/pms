@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import bgMap from "/img/services/02_service_mapbg.svg";
 import bgCircleIn from "/img/services/circle_in.svg";
@@ -7,11 +7,30 @@ import { services } from "../../lib/staticData";
 
 const FrontServices = () => {
   const [selectedService, setSelectedService] = useState(0);
+  const [pause, setPause] = useState(false);
   const activeServHandler = (id) => {
     return (ev) => {
       setSelectedService(id);
+      setPause(true);
     };
   };
+
+  useEffect(() => {
+    const myInterval = setInterval(() => {
+      setSelectedService((prevVal) => {
+        if (!pause) {
+          const id = prevVal >= 6 ? 0 : prevVal + 1;
+          return id;
+        }
+        return prevVal;
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(myInterval);
+    };
+  }, [pause]);
+
   return (
     <section id="our-service" className="our-service">
       <div className="content text-center text-content">
@@ -42,7 +61,10 @@ const FrontServices = () => {
           <div key={i}>
             <div
               onMouseOver={activeServHandler(i)}
-              className={`icon-wrapper ${i === selectedService ? "active" : ""}`}
+              onMouseOut={() => setPause(false)}
+              className={`icon-wrapper ${
+                i === selectedService ? "active" : ""
+              }`}
               style={{
                 transform: `translateY(-100%) translateX(50%) rotate(${
                   i * (360 / services.length)

@@ -11,35 +11,22 @@ import AboutJoin from "../../components/AboutJoin";
 
 import { findPage } from "../../../lib/plugins";
 
-const AboutUs = ({ pages: { edges }, teams }) => {
-  const [pageData, setPageData] = useState();
-  const slug = useLocation().pathname;
-
-  useEffect(async () => {
-    const { node } = findPage(edges, slug.substring(1));
-    setPageData(node);
-  }, []);
+const AboutUs = ({ pageContent: { heroSection, content, slug }, teams }) => {
 
   return (
-    <>
-      {pageData ? (
-        <div className={pageData?.uri}>
-          <Hero {...pageData.heroSection} />
+    <div className={slug}>
+      <Hero {...heroSection} />
 
-          <AboutDes {...pageData} />
+      <AboutDes {...{ content }} />
 
-          <AboutPhilosophy />
+      <AboutPhilosophy />
 
-          <AboutMembers {...teams} />
+      <AboutMembers {...{ teams }} />
 
-          <AboutJoin />
+      <AboutJoin />
 
-          <AboutYT />
-        </div>
-      ) : (
-        ""
-      )}
-    </>
+      <AboutYT />
+    </div>
   );
 };
 

@@ -1,8 +1,12 @@
 import { Row, Col } from "react-bootstrap";
+import { useParallax } from "react-scroll-parallax";
 import { aboutCards } from "../../lib/staticData";
 import { Link } from "react-router-dom";
 
 const FrontAbout = () => {
+  const parallax = useParallax({
+    speed: -10,
+  });
   return (
     <section id="about" className="about content">
       <Row>
@@ -10,6 +14,7 @@ const FrontAbout = () => {
           <img className="about-bg" src="/img/about/04_aboutus.jpg" alt="bg" />
 
           <div
+            ref={parallax.ref}
             data-parallax="{'y': -100, 'smoothness': 1}"
             className="blue-block"
           >

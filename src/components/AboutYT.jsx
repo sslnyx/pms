@@ -1,6 +1,11 @@
-import React from "react";
+import { useRef } from "react";
+import YouTube from "react-youtube";
 
 const AboutYT = () => {
+  const ytCover = useRef();
+  const ytHandler = () => {
+    ytCover.current.classList.add("playing");
+  };
   return (
     <section id="about-video" className="about-video bg-blue">
       <img
@@ -18,13 +23,15 @@ const AboutYT = () => {
           </p>
         </div>
 
-        <div style={{ width: "100%", maxWidth: "850px" }}>
+        <div style={{ width: "100%", maxWidth: "850px" }} onClick={ytHandler}>
           <div className="video-wrapper">
             {/* <youtube video-id="videoId" ref="youtube"></youtube> */}
 
+            <YouTube videoId="uwO_o4Nr1ko" onPlay={ytHandler} />
             <img
+              ref={ytCover}
               className="cover-img"
-              v-if="cover"
+              style={{ pointerEvents: "none" }}
               src="/img/about/marcello-telus-ad.jpg"
             />
           </div>

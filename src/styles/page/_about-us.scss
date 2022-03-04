@@ -1,5 +1,6 @@
 .about-dec .row {
   position: relative;
+  margin-top: -80px;
 
   .col-12:first-child {
     min-height: inherit;
@@ -29,7 +30,8 @@
     position: relative;
     max-width: 550px;
     margin: 0 auto;
-    .quote-left, .quote-right {
+    .quote-left,
+    .quote-right {
       position: absolute;
       top: 0;
       width: 2rem;
@@ -50,6 +52,22 @@
     transform: translateX(-50%);
     z-index: 0;
   }
+}
+
+// .about-bg{
+//   height: 500px;
+//   overflow: visible!important;
+//   transform: translateY(-100px);
+// }
+
+.about-bg-m {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.playing {
+  opacity: 0;
 }
 
 // .team {
@@ -193,6 +211,7 @@
   }
   .cover-img {
     position: absolute;
+    transition: all 0.5s ease;
     top: 0;
     left: 0;
     width: 102%;
@@ -228,7 +247,8 @@
 
   .philosophy {
     p {
-      .quote-left, .quote-right {
+      .quote-left,
+      .quote-right {
         width: 3rem;
       }
       .quote-left {

@@ -31,9 +31,9 @@ body {
   bottom: 0;
 }
 
-// main {
-//   flex: 1;
-// }
+main {
+  min-height: 600px;
+}
 
 .scroll-container {
   position: relative;
@@ -267,12 +267,12 @@ p:last-child {
 
   img {
     // width: 100%;
-    height: 120%;
+    height: 120% !important;
     max-width: none;
     min-width: 100%;
     object-fit: cover;
     position: absolute;
-    bottom: 0;
+    bottom: -10%;
   }
   .title-container {
     position: absolute;

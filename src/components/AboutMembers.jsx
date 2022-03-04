@@ -1,9 +1,9 @@
 import React from "react";
 
-const AboutMembers = ({ edges }) => {
+const AboutMembers = ({ teams }) => {
   return (
     <section id="team" className="team d-flex flex-wrap content">
-      {edges.map(
+      {teams.map(
         ({
           node: {
             id,

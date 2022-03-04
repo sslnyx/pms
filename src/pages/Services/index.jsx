@@ -22,72 +22,54 @@ function paginate(arr, size) {
   }, []);
 }
 
-console.log(servInCol)
-
-const Services = ({ pages: { edges } }) => {
-  const [pageData, setPageData] = useState();
-  const slug = useLocation().pathname;
-
-  useEffect(async () => {
-    const { node } = await findPage(edges, slug.substring(1));
-    setPageData(node);
-  }, [pageData]);
-
+const Services = ({ node: { heroSection, slug, content } }) => {
   return (
-    <>
-      {pageData ? (
-        <div className={pageData.slug}>
-          <Hero {...pageData.heroSection} />
-          <div
-            className="intro content text-center mt-5 p-3 p-md-5"
-            dangerouslySetInnerHTML={{ __html: pageData.content }}
-          ></div>
+    <div className={slug}>
+      <Hero {...heroSection} />
+      <div
+        className="intro content text-center mt-5 p-3 p-md-5"
+        dangerouslySetInnerHTML={{ __html: content }}
+      ></div>
 
-          <section id="services-section">
-            <div className="services-section content pl-3 pr-3">
-              <Accordion className="service-wrapper" defaultActiveKey={0}>
-                <Row>
-                  {servInCol.map((services2, i) => (
-                    <Col>
-                      {services2.map(({ title, img, serPageContent }, j) => (
-                        <Accordion.Item eventKey={title}>
-                          <Accordion.Header>
-                            <Button className="d-flex">
-                              <img
-                                className="serv-icon"
-                                src={`/img/services/icon0${img}.svg`}
-                              />
-                              <span style={{ marginRight: "1rem" }}>
-                                {title}
-                              </span>
-                              <span className="collapse-button"></span>
-                            </Button>
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <div
-                              className="mb-4 pr-0 pr-md-5"
-                              style={{ maxWidth: "500px" }}
-                              dangerouslySetInnerHTML={{
-                                __html: serPageContent,
-                              }}
-                            ></div>
-                            <Link to="contact-us" className="btn-learnmore">
-                              TALK TO US TODAY
-                            </Link>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      ))}
-                    </Col>
+      <section id="services-section">
+        <div className="services-section content pl-3 pr-3">
+          <Accordion className="service-wrapper" defaultActiveKey={0}>
+            <Row>
+              {servInCol.map((services2, i) => (
+                <Col key={i}>
+                  {services2.map(({ title, img, serPageContent }, j) => (
+                    <Accordion.Item eventKey={title} key={j}>
+                      <Accordion.Header>
+                        <div className="d-flex">
+                          <img
+                            className="serv-icon"
+                            src={`/img/services/icon0${img}.svg`}
+                          />
+                          <span style={{ marginRight: "1rem" }}>{title}</span>
+                          <span className="collapse-button"></span>
+                        </div>
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <div
+                          className="mb-4 pr-0 pr-md-5"
+                          style={{ maxWidth: "500px" }}
+                          dangerouslySetInnerHTML={{
+                            __html: serPageContent,
+                          }}
+                        ></div>
+                        <Link to="/contact-us" className="btn-learnmore">
+                          TALK TO US TODAY
+                        </Link>
+                      </Accordion.Body>
+                    </Accordion.Item>
                   ))}
-                </Row>
-              </Accordion>
-            </div>
-          </section>
+                </Col>
+              ))}
+            </Row>
+          </Accordion>
         </div>
-      ) : (
-        ""
-      )}
-    </>
+      </section>
+    </div>
   );
 };
 
