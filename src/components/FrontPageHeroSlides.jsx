@@ -12,7 +12,7 @@ const FrontPageHeroSlides = ({ homeHeroSlider }) => {
         {homeHeroSlider ? (
           <Swiper
             modules={[Pagination, Autoplay]}
-            autoplay={{ disableOnInteraction: false }}
+            // autoplay={{ disableOnInteraction: false }}
             pagination={{ clickable: true }}
             //   spaceBetween={50}
             //   slidesPerView={3}

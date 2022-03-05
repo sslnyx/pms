@@ -34,14 +34,14 @@ function App() {
 
   return (
     <ParallaxProvider>
-      <Helmet
-        defaultTitle={"Pacific Mechanical Systems LTD"}
-        titleTemplate="%s | Pacific Mechanical Systems LTD"
-      ></Helmet>
       {pagesData ? (
         <BrowserRouter>
           <Navbar {...pagesData} />
           <main>
+            <Helmet
+              defaultTitle={"Pacific Mechanical Systems LTD"}
+              titleTemplate="%s | Pacific Mechanical Systems LTD"
+            ></Helmet>
             <Routes>
               <Route
                 index

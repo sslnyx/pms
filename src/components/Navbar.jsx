@@ -1,11 +1,14 @@
 // import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import siteLogo from "/img/logos/PMS_logo.svg";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import MainMenu from "./MainMenu";
 
 const Navbar = ({ pages: { edges } }) => {
   const { pathname } = useLocation();
+  const [activeMain, setOpenMain] = useState(false);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -13,6 +16,12 @@ const Navbar = ({ pages: { edges } }) => {
       behavior: "instant",
     });
   }, [pathname]);
+
+  const mainMenuHandler = (ev) => {
+    if (!activeMain) {
+      setOpenMain(true);
+    }
+  };
 
   return (
     <div className="site-header">
@@ -24,7 +33,10 @@ const Navbar = ({ pages: { edges } }) => {
                 <img className="site-logo" src={siteLogo} alt="site-logo" />
               </Link>
             </div>
-            <div className="hamburger d-inline-block d-lg-none order-3 order-sm-3 pr-0">
+            <div
+              className="hamburger d-inline-block d-lg-none order-3 order-sm-3 pr-0"
+              onClick={mainMenuHandler}
+            >
               <div className="bar1"></div>
               <div className="bar2"></div>
               <div className="bar3"></div>
@@ -50,6 +62,8 @@ const Navbar = ({ pages: { edges } }) => {
           </div>
         </div>
       </nav>
+
+      {activeMain ? <MainMenu {...{ siteLogo, edges, setOpenMain }} /> : ""}
     </div>
   );
 };
