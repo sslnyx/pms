@@ -19,7 +19,11 @@ const MainMenu = ({ siteLogo, edges, setOpenMain }) => {
 
   return (
     <div className="main-menu">
-      <div className="close" aria-label="Close" onClick={() => setOpenMain(false)}></div>
+      <div
+        className="close"
+        aria-label="Close"
+        onClick={() => setOpenMain(false)}
+      ></div>
       <Link to="/#">
         <img
           onClick={() => setOpenMain(false)}
@@ -48,7 +52,11 @@ const MainMenu = ({ siteLogo, edges, setOpenMain }) => {
             ref={(el) => (itemsRef.current[12] = el)}
             style={{ marginTop: "1.2rem" }}
           >
-            <Link className="btn btn-blue" to="/get-a-quote">
+            <Link
+              onClick={() => setOpenMain(false)}
+              className="btn btn-blue"
+              to="/get-a-quote"
+            >
               GET A QUOTE
             </Link>
           </li>
